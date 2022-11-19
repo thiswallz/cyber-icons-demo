@@ -1,8 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import * as CyberIcons from 'cyber-icons-react'
+import { colors } from 'cyber-icons-react'
+import { DocumentPageSetup } from 'cyber-icons-react'
+
 
 export default function Home() {
+  const icons = Object.keys(CyberIcons);
+
+  console.log('colors', colors)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,42 +23,107 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <div>
+          <div>Select Theme</div>
+          <div>
+            {
+              Object.keys(colors).map((color, index) => <div key={index}>
+                <div>{color}</div>
+                <div>
+                  <CyberIcons.SystemLockScreen theme={color} />
+                </div>
+              </div>)
+            }
+          </div>
+        </div>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
+        <div className="container-sections smallest">
+          <section className="dark">
+            {
+              icons.map((s, i) => {
+                if (typeof (CyberIcons as any)[s] !== 'function') {
+                  return null;
+                }
+                const S = (CyberIcons as any)[s];
+                return <S
+                  key={i}
+                  size={'1.5em'}
+                  primary={'#de004e'}
+                  secondary={'#321450'}
+                  border={'#f887ff'}
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+                />
+              })
+            }
+          </section>
+        </div>
+        <div className="container-sections">
+          <section className="dark">
+            {
+              icons.map((s, i) => {
+                if (typeof (CyberIcons as any)[s] !== 'function') {
+                  return null;
+                }
+                const S = (CyberIcons as any)[s];
+                return <S
+                  key={i}
+                  size={'2em'}
+                />
+              })
+            }
+          </section>
+          <section className="dark">
+            {
+              icons.map((s, i) => {
+                if (typeof (CyberIcons as any)[s] !== 'function') {
+                  return null;
+                }
+                const S = (CyberIcons as any)[s];
+                return <S
+                  key={i}
+                  size={'3em'}
+                  primary={'#024059'}
+                  secondary={'#980BBF'}
+                  border={'#F2E307'}
+                />
+              })
+            }
+          </section>
+          <section className="dark">
+            {
+              icons.map((s, i) => {
+                if (typeof (CyberIcons as any)[s] !== 'function') {
+                  return null;
+                }
+                const S = (CyberIcons as any)[s];
+                return <S
+                  key={i}
+                  size={'3em'}
+                  primary={'magenta'}
+                  secondary={'blue'}
+                  border={'cyan'}
+                />
+              })
+            }
+          </section>
+          <section className="dark">
+            {
+              icons.map((s, i) => {
+                if (typeof (CyberIcons as any)[s] !== 'function') {
+                  return null;
+                }
+                const S = (CyberIcons as any)[s];
+                return <S
+                  key={i}
+                  size={'3em'}
+                  primary={'white'}
+                  secondary={'white'}
+                  border={'blue'}
+                />
+              })
+            }
+          </section>
         </div>
       </main>
 
