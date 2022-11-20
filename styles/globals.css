@@ -1,9 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
 }
 
 a {
@@ -27,4 +32,47 @@ body {
 .myIcon {
   width: 200px;
   width: 200px;
+}
+
+.icons-section:after {
+  content: "";
+  flex: auto;
+}
+
+.item-empty {
+  visibility: hidden;
+}
+
+input[type="range"] {
+  appearance: slider-vertical;
+  margin-right: 15px;
+  background: transparent;
+  border-radius: 5px;
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #de004e;
+  border-radius: 10px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #de004e;
+}
+
+@media (max-width: 512px) {
+
+  html,
+  body {
+    font-size: 6px;
+  }
+}
+
+@media (min-width: 512px) and (max-width: 900px) {
+
+  html,
+  body {
+    font-size: 10px;
+  }
 }
