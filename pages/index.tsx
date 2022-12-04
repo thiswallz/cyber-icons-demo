@@ -73,7 +73,7 @@ export default function Home() {
             {`<${iconName} theme="${theme}" ${customColor.primary ? 'primary="' + customColor.primary + '"' : ''} ${customColor.secondary ? 'secondary="' + customColor.secondary + '"' : ''} ${customColor.border ? 'border="' + customColor.border + '"' : ''} size={\`${size}em\`} />`}
           </code>
         </div>
-        <input type="range" min="1" max="10" value={size} onChange={(e) => setSize(e.target.value)} step=".1" className="fixed top-1/2 left-0 z-10" />
+        <input type="range" min="1" max="10" value={size} onChange={(e) => setSize(parseInt(e.target.value))} step=".1" className="fixed top-1/2 left-0 z-10" />
         <section className="m-10">
           <div className="flex justify-center"><input className="w-1/2 p-2 rounded-xl" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} /></div>
           {
