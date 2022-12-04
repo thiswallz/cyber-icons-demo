@@ -2,8 +2,8 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import * as CyberIcons from 'cyber-icons-react'
-import { colors, categories, iconsByCategory } from 'cyber-icons-react'
+import * as CyberIcons from '@vastjs/cyber-icons-react'
+import { colors, categories, iconsByCategory } from '@vastjs/cyber-icons-react'
 
 function formatName(text: string) {
   return text.replace(/\-/g, ' ')
@@ -17,7 +17,7 @@ const initialCustomColor = {
 
 export default function Home() {
   const [theme, setTheme] = useState('eclipse')
-  const [iconName, setIconName] = useState('SystemLockScreen')
+  const [iconName, setIconName] = useState('VideoDisplay')
   const [search, setSearch] = useState('')
   const [size, setSize] = useState(2.5)
   const [customColor, setCustomColor] = useState(initialCustomColor)
@@ -39,18 +39,14 @@ export default function Home() {
           VastJS
         </div>
         <div className="absolute top-5 right-5 flex">
-          <img width="100px" src="/react-min.png" alt="React" />
-          <img width="100px" src="/vue-min.png" alt="Vue" />
-          <img width="100px" src="/angular-min.png" alt="Angular" />
+          <img width="50em" src="/react-min.png" alt="React" />
+          <img width="50em" src="/vue-min.png" alt="Vue" />
+          <img width="50em" src="/angular-min.png" alt="Angular" />
         </div>
         <div>
           <h1 className={styles.title}>
             Cyber Icons
           </h1>
-          <div>
-            TODO: copy svg, category,
-
-          </div>
           <h2 className="text-xl text-center">Select Theme</h2>
         </div>
         <div className="w-full sticky top-0 bg-black/80">
@@ -79,10 +75,10 @@ export default function Home() {
         </div>
         <input type="range" min="1" max="10" value={size} onChange={(e) => setSize(e.target.value)} step=".1" className="fixed top-1/2 left-0 z-10" />
         <section className="m-10">
-          <div className="flex justify-center"><input placeholder="Search..." onChange={(e) => setSearch(e.target.value)} /></div>
+          <div className="flex justify-center"><input className="w-1/2 p-2 rounded-xl" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} /></div>
           {
             Object.keys(iconsByCategory).map((category, index) => <div key={index}>
-              <h2 className="ml-10 text-xl capitalize my-4">{formatName(category)}</h2>
+              <h2 className="mt-20 ml-10 text-xl capitalize my-4">{formatName(category)}</h2>
               <section className="icons-section dark flex gap-4 flex-wrap justify-center">
                 {
                   iconsByCategory[category]
@@ -97,12 +93,15 @@ export default function Home() {
                           primary={customColor.primary}
                           secondary={customColor.secondary}
                           border={customColor.border}
+                          stroke={'1px'}
                           onClick={() => setIconName(icon)}
                         />
                         <div className="text-xs">{`<${icon} />`}</div>
                       </div>
                     })
                 }
+                <div className="item-empty w-48"></div>
+                <div className="item-empty w-48"></div>
                 <div className="item-empty w-48"></div>
                 <div className="item-empty w-48"></div>
                 <div className="item-empty w-48"></div>
@@ -114,18 +113,18 @@ export default function Home() {
         </section>
 
         <section>
-        React Installation
+          React Installation
 
-        <code>
-        npm install --save @vastjs/cyber-icons-react
-        </code>
+          <code>
+            npm install --save @vastjs/cyber-icons-react
+          </code>
 
         </section>
       </main>
 
-     <footer className={styles.footer}>
+      <footer className={styles.footer}>
 
-     </footer>
+      </footer>
     </div>
   )
 }
