@@ -38,10 +38,20 @@ export default function Home() {
           <img width="30px" src="/logo.png" alt="VastJS" />
           VastJS
         </div>
-        <div className="absolute top-5 right-5 flex">
-          <img width="50em" src="/react-min.png" alt="React" />
-          <img width="50em" src="/vue-min.png" alt="Vue" />
-          <img width="50em" src="/angular-min.png" alt="Angular" />
+        <div className="fixed top-24 right-5 flex gap-4 text-sm z-50">
+          <a href="https://github.com/avastjs/cyber-icons" target={'_blank'} rel="noreferrer">
+            <img width="50em" src="/GitHub_Logo_White.png" alt="Support on github" />
+            Support by giving us an star ❤️🌟
+          </a>
+        </div>
+        <div className="fixed z-50 top-5 right-5 flex">
+          <a href="https://github.com/avastjs/cyber-icons" target={'_blank'} rel="noreferrer">
+            <img width="60em" src="/react-min.png" alt="React" />
+          </a>
+
+          <a href="https://github.com/avastjs/cyber-icons" target={'_blank'} rel="noreferrer">
+            <img width="60em" src="/vue-min.png" alt="Vue" />
+          </a>
         </div>
         <div>
           <h1 className={styles.title}>
