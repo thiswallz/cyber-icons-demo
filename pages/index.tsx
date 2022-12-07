@@ -121,16 +121,7 @@ export default function Home() {
             </div>)
           }
         </section>
-
-        <section>
-          React Installation
-
-          <code>
-            npm install --save @vastjs/cyber-icons-react
-          </code>
-
-        </section>
-      </main>
+     </main>
 
       <footer className={styles.footer}>
 
