@@ -41,7 +41,7 @@ export default function Home() {
         <div className="fixed top-24 right-5 flex gap-4 text-sm z-50">
           <a href="https://github.com/avastjs/cyber-icons" target={'_blank'} rel="noreferrer">
             <img width="50em" src="/GitHub_Logo_White.png" alt="Support on github" />
-            Support by giving us an star ❤️🌟
+            Support by giving us a star ❤️🌟
           </a>
         </div>
         <div className="fixed z-50 top-5 right-5 flex">
